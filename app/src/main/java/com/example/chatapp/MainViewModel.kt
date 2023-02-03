@@ -18,9 +18,28 @@ class MainViewModel : ViewModel() {
     val contacts: LiveData<List<Contacts>>
         get() = _contacts
 
+    private val _commentList = MutableLiveData<MutableList<String>>()
+    val commentList: LiveData<MutableList<String>>
+        get() = _commentList
+
+
     init {
         loadContacts()
         Log.d("MainViewModel","loading contactslist")
+    }
+
+    fun loadComments(index: Int) {
+        val contact = _contacts.value!![index]
+
+       if (contact != null) {
+
+            _commentList.value = contact.chatHistorie
+        }
+    }
+
+    fun addComment(comment: String) {
+        _commentList.value?.add(comment)
+        _commentList.value = _commentList.value
     }
 
 

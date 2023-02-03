@@ -4,6 +4,7 @@ data class Contacts(
 
     val id: Int,
     val name: String,
-    val imageResourceId: Int
+    val imageResourceId: Int,
+    val chatHistorie: MutableList<String>
 
 )

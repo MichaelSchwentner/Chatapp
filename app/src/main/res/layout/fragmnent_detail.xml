@@ -7,13 +7,25 @@
 
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="#2C2D2E"
+                android:minHeight="?attr/actionBarSize"
+                app:title="chatapp"
+                app:titleTextColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.appcompat.widget.Toolbar>
 
 
             <Button
@@ -21,40 +33,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#03A9F4"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#272829"
                 android:text="absenden"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/detail_comment_edit" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
                 android:id="@+id/detail_comment_edit"
-                android:layout_width="256dp"
-                android:layout_height="41dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#9C1414"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#1B1919"
                 android:ems="10"
                 android:hint="Dein Kommentar"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/detail_comment_send_button"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/detail_comment_recycler"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/detail_comment_edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_toolbar"
+                app:layout_constraintVertical_bias="1.0"
                 tools:itemCount="3"
                 tools:listitem="@layout/comment_item" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 </layout>

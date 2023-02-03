@@ -45,7 +45,7 @@ class ContactsAdapter() : RecyclerView.Adapter<ContactsAdapter.ItemViewHolder>()
 
         holder.card.setOnClickListener {
            holder.itemView.findNavController()
-                .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(contact.id))
+                .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(position))
        }
     }
 
